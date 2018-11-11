@@ -13,8 +13,8 @@ requirements = [
 
 test_requirements = [
     'pytest',
-    'pytest-mock',
     'pytest-runner',
+    'pytest-mock',
     'pytest-aiohttp',
     'pytest-flake8',
     'flake8-isort',

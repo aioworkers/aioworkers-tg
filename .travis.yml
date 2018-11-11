@@ -1,17 +1,22 @@
 language: python
 sudo: false
-
 python:
 - 3.5
 - 3.6
 - 3.7-dev
-
 install:
 - pip install -U pip setuptools
 - pip install pytest-runner
-
 script:
 - python setup.py test
-
 before_deploy:
 - echo "__version__ = '$(git describe --tags)'" > aioworkers_tg/version.py
+deploy:
+  provider: pypi
+  user: abogushov
+  on:
+    tags: true
+    condition: "$TRAVIS_PYTHON_VERSION = 3.6"
+  skip_cleanup: true
+  password:
+    secure: LkEBKMSsY7W6oD7dljR6WgLPvty9cSMgxwL00fKlp/6N/ljgmJTmLlcAX6yK4K3YxKpXuARGawYbd7RyW8QYpZ1CWzZky+n+IgHzxvulOGs0Nm2/KvzpzQewKnWCWjEAfv/WfcLepg7hH5KwCvygPLOuPqG9a0ExK2TfW+xFO6EE70fVsFMBQxBh0ME8nyuezh0IlAwewkkAgyMcYrEdhw09SC3MWyyftFma+1oI5ul854SunpCKx+I6mLn5EDczvIsV+qfc9quCDEycUt92YvX7juUaTP9221mZeXtb2UzbzLuxqvPkCQyVOMAVhaMcgv94+XZyYb2jPnQYCoO3ofHMz8D3nwN4kEFPgK6aaORlD6nxvk4FbkfBVtGE8gj9GcLBrxPqPL7jVu6A/RgfcoO2+9t8x7oO2zBugw9+kdzbe1NAl13IrrgDyckr76/A4/12WCt7zmS03Vc1x0Xvgge0aTx6AAvTc0j61spjkwwY6Xc377zqHRKPI6/DxXU09JfQLUeVwwts9QAJdilrwR0AwsszmVcXtj+NFpoUN8c5fr10GzsVC9z7otQvnDuFwGOJzQqlCwDImllKpW6fWjLb4fujT7lOEJGLi0dLnS+6/xb6V+cvLJn60HbOboU/4DYtVsoHUODHz6zhLGvRvaAhD+AsnII0vZlu4lVh32U=
