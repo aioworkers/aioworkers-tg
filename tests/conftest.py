@@ -5,10 +5,9 @@ import pytest
 def config():
     from aioworkers.core.config import Config
     return Config(
-        group={
-            'cls': 'aioworkers_tg.group.TelegramGroup',
+        bot={
+            'cls': 'aioworkers_tg.TelegramBot',
             'api_token': '1234567890',
-            'group_id': '1',
         },
     )
 
@@ -18,3 +17,13 @@ def context(config, loop):
     from aioworkers.core.context import Context
     with Context(config, loop=loop) as ctx:
         yield ctx
+
+
+@pytest.fixture
+def api_call(mocker):
+    from aiohttp.test_utils import make_mocked_coro
+    mock = mocker.patch(
+        'aiotg.bot.Bot.api_call',
+        make_mocked_coro()
+    )
+    yield mock
