@@ -1,4 +1,4 @@
-from aioworkers_tg.base import TelegramBot
+from aioworkers_tg.bot import TelegramBot
 
 
 class TelegramChat(TelegramBot):

@@ -8,7 +8,7 @@ version = __import__('aioworkers_tg').__version__
 
 requirements = [
     'aioworkers>=0.12.0',
-    'aiotg>=0.9.9',
+    'aiotg>=1.0.0',
 ]
 
 test_requirements = [

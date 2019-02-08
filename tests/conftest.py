@@ -6,7 +6,7 @@ def config():
     from aioworkers.core.config import Config
     return Config(
         bot={
-            'cls': 'aioworkers_tg.TelegramBot',
+            'cls': 'aioworkers_tg.bot.TelegramBot',
             'api_token': '1234567890',
         },
     )

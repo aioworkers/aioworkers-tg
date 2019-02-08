@@ -32,7 +32,7 @@ Create entity of bot in aioworkers config:
 .. code-block:: yaml
 
     bot:
-        cls: 'aioworkers_tg.TelegramBot'
+        cls: 'aioworkers_tg.bot.TelegramBot'
         api_token: '1234567890'
 
 You can use it directly from context:
@@ -47,7 +47,7 @@ Also it is possible to create chat instance and send messages directly:
 .. code-block:: yaml
 
     chat:
-        cls: 'aioworkers_tg.TelegramChat'
+        cls: 'aioworkers_tg.chat.TelegramChat'
         bot: 'bot' # reference to created bot
         group_id: '11111'
 

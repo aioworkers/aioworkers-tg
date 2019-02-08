@@ -5,17 +5,17 @@ import pytest
 def config(config):
     config.update(
         group={
-            'cls': 'aioworkers_tg.TelegramChat',
+            'cls': 'aioworkers_tg.chat.TelegramChat',
             'bot': 'bot',
             'group_id': '1',
         },
         user={
-            'cls': 'aioworkers_tg.TelegramChat',
+            'cls': 'aioworkers_tg.chat.TelegramChat',
             'bot': 'bot',
             'user_id': '2',
         },
         channel={
-            'cls': 'aioworkers_tg.TelegramChat',
+            'cls': 'aioworkers_tg.chat.TelegramChat',
             'bot': 'bot',
             'channel': '@channel',
         },
