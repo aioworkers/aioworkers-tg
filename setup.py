@@ -15,7 +15,7 @@ test_requirements = [
     'pytest',
     'pytest-runner',
     'pytest-mock',
-    'pytest-aiohttp',
+    'pytest-aioworkers',
     'pytest-flake8',
     'flake8-isort',
 ]

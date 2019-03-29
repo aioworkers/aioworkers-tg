@@ -2,21 +2,12 @@ import pytest
 
 
 @pytest.fixture
-def config():
-    from aioworkers.core.config import Config
-    return Config(
-        bot={
-            'cls': 'aioworkers_tg.bot.TelegramBot',
-            'api_token': '1234567890',
-        },
-    )
-
-
-@pytest.fixture
-def context(config, loop):
-    from aioworkers.core.context import Context
-    with Context(config, loop=loop) as ctx:
-        yield ctx
+def config_yaml():
+    return """
+    bot:
+      cls: aioworkers_tg.bot.TelegramBot
+      api_token: 1234567890
+    """
 
 
 @pytest.fixture
