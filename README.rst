@@ -4,6 +4,10 @@ aioworkers-tg
 .. image:: https://travis-ci.org/aioworkers/aioworkers-tg.svg?branch=master
   :target: https://travis-ci.org/aioworkers/aioworkers-tg
 
+.. image:: https://img.shields.io/pypi/pyversions/aioworkers-tg.svg
+  :target: https://pypi.python.org/pypi/aioworkers-tg
+  :alt: Python versions
+
 .. image:: https://img.shields.io/pypi/v/aioworkers-tg.svg
   :target: https://pypi.python.org/pypi/aioworkers-tg
 
@@ -56,3 +60,21 @@ Also it is possible to create chat instance and send messages directly:
 
     await context.chat.send_text("Hello!")
 
+
+
+Development
+-----------
+
+Install dev requirements:
+
+
+.. code-block:: shell
+
+    pipenv install --dev --skip-lock
+
+
+Run tests:
+
+.. code-block:: shell
+
+    pytest
